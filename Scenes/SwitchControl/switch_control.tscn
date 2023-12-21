@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn2o7jtqfcyj2"]
+
+[ext_resource type="Script" path="res://Components/SwitchControl/Control.gd" id="1_1vs0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u7t1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl4he"]
+size = Vector2(20, 308)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnwua"]
+
+[node name="SwitchControl" type="Node2D"]
+
+[node name="Control" type="Node2D" parent="."]
+script = ExtResource("1_1vs0y")
+speed = 25.0
+
+[node name="object1" type="CharacterBody2D" parent="Control"]
+position = Vector2(70, 68)
+collision_layer = 2
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/object1"]
+shape = SubResource("RectangleShape2D_2u7t1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(10, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 144)
+shape = SubResource("RectangleShape2D_sl4he")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(225, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 144)
+shape = SubResource("RectangleShape2D_sl4he")
+
+[node name="object2" type="CharacterBody2D" parent="."]
+collision_layer = 2
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="object2"]
+position = Vector2(120, 68)
+shape = SubResource("RectangleShape2D_gnwua")
